@@ -13,17 +13,12 @@
 		<meta name="msapplication-navbutton-color"         content="black">
 		<meta name="msapplication-config"                  content="none">
 		<meta name="msapplication-TileColor"               content="black">
-		<link rel="apple-touch-icon"      sizes="192x192"  href="/ico/icon_192.png">
-		<link rel="icon" type="image/png" sizes="512x512"  href="/ico/icon_512.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="/ico/icon_192.png">
-		<link rel="icon" type="image/png" sizes="32x32"    href="/ico/icon_32.png">
-		<link rel="stylesheet" type="text/css"             href="css/simple_console.css"/>
-		<link rel="stylesheet" type="text/css"             href="css/main.css?20220309194758"/>
-		<meta name="twitter:card"        content="summary">
-		<meta name="twitter:site"        content="@andreasgysin">
-		<meta name="twitter:title"       content="ertdfgcvb">
-		<meta name="twitter:description" content="Studio for design and code.">
-		<meta name="twitter:image"       content="https://ertdfgcvb.xyz/ico/icon_512.png">
+		<link rel="apple-touch-icon"      sizes="192x192"  href="apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="512x512"  href="android-chrome-512x512.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32"    href="favicon-32x32.png">
+		<link rel="stylesheet" type="text/css"             href="simple_console.css"/>
+		<link rel="stylesheet" type="text/css"             href="main.css"/>
 	</head>
 	<body>
 		<!--
@@ -31,7 +26,7 @@
 		-->
 		<main class="invisible">
 			<div>
-				ertdfgcvb
+				slaycid.com
 			</div>
 			<div>
 				Studio for design and code based in Lugano, Switzerland.
@@ -74,7 +69,7 @@
 			</div>
 		</main>
 		<pre aria-hidden="true"></pre>
-		<script src="boot.js?20220309194758"></script>
+		<script src="boot.js"></script>
 		<script>
 
 			// Parse location
@@ -91,7 +86,7 @@
 			const word  = (url.hash.substr(1) || src.get('word') || '').toLowerCase()
 
 			// Boot
-			ertdfgcvb.boot({word, mode, color})
+			slaycid.boot({word, mode, color})
 
 			// Old “tiroir” code
 			const s = shuffle([
