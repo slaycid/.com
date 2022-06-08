@@ -25,7 +25,7 @@
 	<body>
 		<main class="invisible">
 			<div>
-				слэйсид
+				slaycid
 			</div>
 			<div>
 				Графический бандит, что много мандит.
@@ -39,57 +39,37 @@
 				<a href="mailto:oi@slaycid.com" class="tiroir">ciao</a>
 			</div>
 			<div>
-				Ссылки:<br>
-				<a target="_blank" href="https://twitter.com/andreasgysin">Twitter</a><br>
+				Socials:<br>
 				<a target="_blank" href="https://www.instagram.com/andreasgysin/">Instagram</a><br>
-				<a target="_blank" href="https://vimeo.com/ertdfgcvb/videos">Vimeo</a><br>
-				<a target="_blank" href="http://github.com/ertdfgcvb">GitHub</a><br>
-				<a target="_blank" href="https://gysin-vanetti.com">Gysin─Vanetti</a>
+				<a target="_blank" href="https://t.me/s_crapland">Telegram</a><br>
+				<a target="_blank" href="https://twitter.com/slaycid">Twitter</a><br>
 			</div>
 			<div>
-				CryptoArt:<br>
-				<a target="_blank" href="https://feralfile.com/profiles/ertdfgcvb">Feral File</a><br>
-				<a target="_blank" href="https://fxhash.xyz/u/ertdfgcvb">fx(hash)</a><br>
-				<a target="_blank" href="https://superrare.co/ertdfgcvb">SuperRare</a><br>
-				<a target="_blank" href="https://teia.art/ertdfgcvb">Teia</a><br>
-				<a target="_blank" href="https://knownorigin.io/ertdfgcvb">KnownOrigin</a><br>
-				<a target="_blank" href="https://opensea.io/collection/textmode">OpenSea</a><br>
-				<a target="_blank" href="https://foundation.app/ertdfgcvb">Foundation</a><br>
-				<a target="_blank" href="https://app.rarible.com/ertdfgcvb">Rarible</a><br>
-				<!-- <a target="_blank" href="https://tryshowtime.com/ertdfgcvb">Showtime</a><br> -->
+				Store:<br>
+				<a target="_blank" href="https://t.me/s_crapland">Clothing/a><br>
+				<a target="_blank" href="https://t.me/s_crapland">Jewelry</a><br>
+				<a target="_blank" href="https://t.me/s_crapland">Stuff</a><br>
 			</div>
 			<div>
-				Toys:<br>
-				<a href="https://play.ertdfgcvb.xyz">ASCII play</a><br>
-				<a href="https://sub.ertdfgcvb.xyz">Subdivisions</a><br>
-				<a href="https://sequencer.ertdfgcvb.xyz">Sequencer</a><br>
-				<a href="https://ertdfgcvb.xyz/?mode=screensaver">Screensaver</a><br>
-				<a href="https://ertdfgcvb.xyz/+/">+ (w.i.p.)</a>
+				Projects:<br>
+				<a href="https://t.me/s_crapland">Soon</a><br>
+				<a href="https://t.me/s_crapland">Soon</a><br>
+				<a href="https://t.me/s_crapland">Soon</a><br>
 			</div>
 		</main>
 		<pre aria-hidden="true"></pre>
 		<script src="script.js"></script>
 		<script>
 
-			// Parse location
 			const url = new URL(location)
 			const src = url.searchParams
-			// if mode is set to 'screensaver' the navigation will be hidden
 			const mode  = (src.get('mode') || '').toLowerCase()
-			// color can be set to 'true' for color cycle,
-			// or 'white' for full contrast;
-			// othewrise gray is used
 			const color = (src.get('color') || '').toLowerCase()
-			// word can be any alphanumeirc string, but must be of length 3
-			// othwerwise a randomised internal dict will be used
 			const word  = (url.hash.substr(1) || src.get('word') || '').toLowerCase()
 
-			// Boot
 			slaycid.boot({word, mode, color})
 
-			// Old “tiroir” code
 			const s = shuffle([
-				// ---- cheers
 				'Hi',
 				'Yo',
 				'Ciao',
@@ -109,14 +89,11 @@
 				'Buona notte',
 				'Buenas dias',
 				'Hasta la victoria',
-				// ---- love
 				'I love you',
 				'I hate you',
-				// '“I ♥ ♠ ♦ ♣”',
 				'I love my cat',
 				'I love my dog',
 				'I want to be your slave',
-				// ---- thats
 				'Life is life',
 				'I liked my dinner',
 				'Gilgamesh is my father',
@@ -125,26 +102,20 @@
 				'Sex or fox are better than fax',
 				'It’s common to say it’s common',
 				'Aaaah is not the same as ooooh',
-				// ---- colors
 				'Blue is my favourite color',
 				'Pink is my favourite color',
 				'Gray is my favourite color',
 				'Ocra is my favourite color',
-				// ---- numbers
 				'Two has three letters',
 				'Three has five letters',
 				'Five has four letters',
 				'Four has four letters',
 				'π is close to, but not exactly 3.1415',
-				// 'that 1 one stays to 2 twos like 3 trees stay to 4 Fords',
-				// ---- animals
 				'Slick worms eat silk',
 				'Sheep sings while ship sinks',
 				'Gold is fish and golf is dish',
 				'I saw a cat sleeping in a box',
 				'The fly flies and the flies fly',
-				// 'that a bird’s burden is the weight of a feather',
-				// 'that bird is feather’s father but not vice-versa',
 			])
 
 			let c = 0;
