@@ -1,10 +1,4 @@
-// -----------------------------------------------------------------------------
-// ertdfgcvb p4
-// by
-// ertdfgcvb.xyz
-// (c) 2021
-// -----------------------------------------------------------------------------
-var ertdfgcvb=function(t){"use strict";var e={preferredElementNodeName:"PRE",render:function(t,e){const i=t.settings.element;i.style.backgroundColor=t.settings.background,
+var slaycid=function(t){"use strict";var e={preferredElementNodeName:"PRE",render:function(t,e){const i=t.settings.element;i.style.backgroundColor=t.settings.background,
 i.style.color=t.settings.color,i.style.fontWeight=t.settings.weight,(t.rows!=r||t.cols!=o)&&(o=t.cols,r=t.rows,n.length=0);for(;i.childElementCount<r;){const t=document.createElement("span")
 ;t.style.display="block",i.appendChild(t)}for(;i.childElementCount>r;)i.removeChild(i.lastChild);for(let l=0;l<r;l++){const r=l*o;let c=!1;for(let t=0;t<o;t++){const o=t+r,s=e[o],i=n[o];a(s,i)||(c=!0,
 n[o]={...s})}if(0==c)continue;let h="",d={},u=!1;for(let n=0;n<o;n++){const o=e[n+r];if(o.beginHTML&&(u&&(h+="</span>",d={},u=!1),h+=o.beginHTML),!s(o,d)){u&&(h+="</span>")
