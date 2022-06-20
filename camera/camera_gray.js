@@ -14,7 +14,7 @@ const can = new Canvas()
 // For a debug view uncomment the following line:
 // can.display(document.body, 10, 10)
 
-const density = sort(' .x?▂▄▆█', 'Simple Console', false)
+const density = sort(' .x?▂▄▆█', 'JetBrains Mono', false)
 
 const data = []
 
