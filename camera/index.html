@@ -29,8 +29,8 @@
 <body>
 	<pre></pre>
 	<script type="module">
-		import { run } from 'run.js'
-		import * as program from 'camera_gray.js'
+		import { run } from '/camera/run.js'
+		import * as program from '/camera/camera_gray.js'
 		run(program, { element : document.querySelector('pre') }).then(function(e){
 			console.log(e)
 		}).catch(function(e) {
