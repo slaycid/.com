@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>s*</title>
+		<meta name="description"                           content="The most offensive resource on the web">
+		<meta name="author"                                content="slaycid.com">
+		<meta name="viewport"                              content="width=device-width, initial-scale=1">
+		<meta name="mobile-web-app-capable"                content="yes">
+		<meta name="apple-mobile-web-app-capable"          content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="theme-color"                           content="black">
+		<meta name="msapplication-navbutton-color"         content="black">
+		<meta name="msapplication-config"                  content="none">
+		<meta name="msapplication-TileColor"               content="black">
+		<link rel="apple-touch-icon"      sizes="192x192"  href="ico_192.png">
+		<link rel="icon" type="image/png" sizes="512x512"  href="ico_512.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="ico_192.png">
+		<link rel="icon" type="image/png" sizes="32x32"    href="ico_32.png">
+		<link rel="stylesheet" type="text/css"             href="page.css">
+		<link rel="preconnect"                             href="https://fonts.googleapis.com">
+                <link rel="preconnect"                             href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet"                             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+	</head>
+	<body>
+		<main class="invisible">
+			<div>
+				slaycid123
+			</div>
+			<div>
+				Graphic thug who does not give a fuck.
+			</div>
+			<div class="span">
+				I do nasty graphics for you and your mom, designing clothing and jewelry, making beats, trying to code, wanking a lot.
+			</div>
+			<div>
+				Email for inquiries or just to say:<br>
+				<a href="mailto:oi@slaycid.com" class="tiroir">ciao</a>
+			</div>
+			<div>
+				Links:<br>
+				<a target="_blank" href="https://www.instagram.com/slaycid/">Instagram</a><br>
+				<a target="_blank" href="https://t.me/slaycid">Telegram</a><br>
+				<a target="_blank" href="https://t.me/s_crapland">Channel</a><br>
+			</div>
+			<div>
+				Store:<br>
+				<a target="_blank" href="https://t.me/s_crapland">Buy the best</a><br>
+				<a target="_blank" href="https://t.me/s_crapland">Fuck the rest</a><br>
+			</div>
+			<div>
+				Collab?<br>
+				<a target="_blank" href="https://t.me/slaycid">Maybe</a><br>
+				<a target="_blank" href="https://t.me/slaycid">Maybe not</a><br>
+				<a target="_blank" href="https://t.me/slaycid">Maybe fuck yourself</a><br>
+			</div>
+		</main>
+		<pre aria-hidden="true"></pre>
+		<script src="script.js"></script>
+		<script>
+
+			const url = new URL(location)
+			const src = url.searchParams
+			const mode  = (src.get('mode') || '').toLowerCase()
+			const color = (src.get('color') || '').toLowerCase()
+			const word  = (url.hash.substr(1) || src.get('word') || '').toLowerCase()
+
+			slaycid.boot({word, mode, color})
+
+			const s = shuffle([
+				'Hello',
+				'Hi',
+				'Yo',
+				'Oi',
+				'Fuck you',
+				'I love you',
+				'I hate you',
+				'Suck my balls',
+				'Suck my ass',
+				'Go to hell',
+				'Give me code',
+			])
+
+			let c = 0;
+			const e = document.querySelector('.tiroir')
+			function swap(){
+				c = ++c % s.length
+				e.href = 'mailto:oi@slaycid.com?subject=' + s[c]
+				e.innerText = s[c]
+			}
+			swap()
+			setInterval(swap, 9000)
+
+			function shuffle(array){
+				for(let i=array.length-1; i>0; i--){
+					const j = Math.floor(Math.random() * i)
+					;[array[i], array[j]] = [array[j], array[i]]
+				}
+				return array
+			}
+
+		</script>
+	</body>
+</html>
