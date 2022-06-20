@@ -3,11 +3,11 @@ Runner
 */
 
 // Both available renderers are imported
-import textRenderer from 'textrenderer.js'
-import canvasRenderer from 'canvasrenderer.js'
-import FPS from 'fps.js'
-import storage from 'storage.js'
-import RUNNER_VERSION from 'version.js'
+import textRenderer from './textrenderer.js'
+import canvasRenderer from './canvasrenderer.js'
+import FPS from './fps.js'
+import storage from './storage.js'
+import RUNNER_VERSION from './version.js'
 
 export { RUNNER_VERSION }
 
