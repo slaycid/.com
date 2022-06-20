@@ -5,9 +5,9 @@
 @desc   Grayscale input from camera
 */
 
-import { sort } from 'sort.js'
-import Camera from 'camera.js'
-import Canvas from 'canvas.js'
+import { sort } from './sort.js'
+import Camera from './camera.js'
+import Canvas from './canvas.js'
 
 const cam = Camera.init()
 const can = new Canvas()
