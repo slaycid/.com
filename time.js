@@ -71,7 +71,7 @@ export function degrees(target) {
 export function clock(target) {
 	const KEY = 'alarm'
 
-	const alarm = JSON.parse(localStorage.getItem(KEY)) || {h:7, m:0}
+	const alarm = JSON.parse(localStorage.getItem(KEY)) || {h:16, m:20}
 
 	let out = ''
 	out += '<span class="btn h">'+F(alarm.h)+'</span>'
