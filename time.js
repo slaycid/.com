@@ -1,20 +1,12 @@
-/**
-    24 Times
-    Twentyfour variations on the theme “clock”
-    created for HeK
-    by Gysin-Vanetti
-  © 2020
-*/
-
 const H   = t => t.getHours()
 const M   = t => t.getMinutes()
 const S   = t => t.getSeconds()
-const SEC = t => S(t) + M(t) * 60 + H(t) * 3600         // Time in seconds
-const MIL = t => SEC(t) * 1000 + t.getMilliseconds()    // Time in milliseconds
-const F   = n => n.toString().padStart(2, '0')          // Formatted string
-const D1  = n => Math.floor(n / 10)                     // First digit
-const D2  = n => n % 10                                 // Second digit
-const DAY = 86400                                       // Seconds in a day
+const SEC = t => S(t) + M(t) * 60 + H(t) * 3600
+const MIL = t => SEC(t) * 1000 + t.getMilliseconds()
+const F   = n => n.toString().padStart(2, '0')
+const D1  = n => Math.floor(n / 10)
+const D2  = n => n % 10
+const DAY = 86400
 
 export function normal(target) {
 	return t => {
@@ -79,7 +71,6 @@ export function degrees(target) {
 export function clock(target) {
 	const KEY = 'alarm'
 
-	// Previous setting retrieved from LS, if any
 	const alarm = JSON.parse(localStorage.getItem(KEY)) || {h:7, m:0}
 
 	let out = ''
@@ -101,7 +92,6 @@ export function clock(target) {
 			e.target.innerText = set
 			alarm[position] = set
 
-			// Store to LS
 			localStorage.setItem(KEY, JSON.stringify(alarm))
 		})
 	})
@@ -208,20 +198,15 @@ export function sort(target) {
 
 export function random(target) {
 
-	// Fisher-Yates shuffle (in place)
 	function shuffle(arr) {
 		for (let i = arr.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1))
-			//[arr[i], arr[j]] = [arr[j], arr[i]]
-			// Slightly faster:
 			const t = arr[i]
 			arr[i] = arr[j]
 			arr[j] = t
 		}
 	}
 
-	// Array with all the (unique) times of a day
-	// in string format
 	const arr = []
 	let idx = 0
 	for (let s=0; s<60; s++){
@@ -238,7 +223,6 @@ export function random(target) {
 	return t => {
 		if (ps != S(t)) {
 			ps = S(t)
-			// Reshuffle every 24h
 			if (idx == 0) shuffle(arr)
 			const h = Math.floor(Math.random()*24)
 			const m = Math.floor(Math.random()*60)
@@ -371,40 +355,27 @@ export function special(target) {
 
 	function isSpecial(x,y,z) {
 
-		// ab:ab:ab
-		// aa:aa:aa
 		if (x==y && y==z) return true
 
-		// aa:bb:aa
-		// ab:cc:ba
-		// ab:bb:ba
 		if (x[0]==z[1] && x[1]==z[0] && y[0] == y[1]) return "Palindrome!"
 
-		// aa:bb:cc
 		if (x[0]==x[1] && y[0]==y[1] && z[0] == z[1]) return true
 
-		// aa:ab:bb
 		if (x[0]==x[1] && x[1]==y[0] && y[1] == z[0] && z[0] == z[1]) return true
 
-		// ab:ca:bc
 		if (x[0]==y[1] && x[1]==z[0] && y[0] == z[1]) return true
 
-		// ab:ba:ab
 		if (x[0]==y[1] && x[0] == z[0] && x[1] == y[0] && x[1] == z[1]) return true
 
-		// a0:a1:a2, a1:a2:a3, a2:a3:a4... (progressivo)
 		const nx = parseInt(x)
 		const ny = parseInt(y)
 		const nz = parseInt(z)
 		if (nz == ny + 1 && ny == nx + 1) return true
 
-		//a3:a2:a1, a2:a1:a0... (progressivo)
 		if (nz == ny - 1 && ny == nx - 1) return true
 
-		// 12:34:56
 		if (x == '12' && y == '34' && z == '56') return "Straight Flush!"
 
-		// 01:23:45
 		if (x == '01' && y == '23' && z == '45') return "Straight Flush!"
 
 		return false
@@ -416,24 +387,22 @@ export function special(target) {
 			target.innerHTML = '  :  :  '
 		} else {
 			target.innerHTML = F(H(t)) + ':' + F(M(t)) + ':' + F(S(t))
-			// Comment:
-			// if (r !== true) target.innerHTML += ' ' + r
 		}
 	}
 }
 
 export function morse(target) {
 	const code = [
-		'−−−−−', // 0
-		'·−−−−', // 1
-		'··−−−', // 2
-		'···−−', // 3
-		'····−', // 4
-		'·····', // 5
-		'−····', // 6
-		'−−···', // 7
-		'−−−··', // 8
-		'−−−−·', // 9
+		'−−−−−',
+		'·−−−−',
+		'··−−−',
+		'···−−',
+		'····−',
+		'·····',
+		'−····',
+		'−−···',
+		'−−−··',
+		'−−−−·',
 	]
 
 	return t => {
@@ -455,11 +424,11 @@ export function morse(target) {
 
 export function lucky(target) {
 	const unlucky = [
-		4,  // China
-		9,  // Japan
-		13, // EU/US ?
-		17, // Italy
-		39  // Afghanistan
+		4,
+		9,
+		13,
+		17,
+		39
 	]
 
 	return t => {
@@ -515,6 +484,6 @@ export function leet(target) {
 
 export function hiroshima(target) {
 	return t => {
-		target.innerHTML = '08:15'
+		target.innerHTML = '??:??'
 	}
 }
