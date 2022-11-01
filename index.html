@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>24 Times</title>
-    <meta name="description" content="A collection of twentyfour variations on the theme “clock” created for HeK by Gysin-Vanetti.">
-    <meta name="author" content="Gysin-Vanetti, 2020">
+    <title>М:О:П</title>
+    <meta name="description" content="Минимальное Онлайн Присутствие">
+    <meta name="author" content="slaycid / 2022">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,22 +13,25 @@
     <meta name="msapplication-navbutton-color" content="white">
     <meta name="msapplication-config" content="none">
     <meta name="msapplication-TileColor" content="white">
-    <meta name="msapplication-square70x70logo" content="ico/icon_192.png">
-    <meta name="msapplication-square150x150logo" content="ico/icon_192.png">
-    <meta name="msapplication-TileImage" content="ico/icon_192.png">
-    <link rel="apple-touch-icon" href="ico/icon_192.png">
-    <link rel="icon" href="ico/icon_32.png">
+    <meta name="msapplication-square70x70logo" content="icon_192.png">
+    <meta name="msapplication-square150x150logo" content="icon_192.png">
+    <meta name="msapplication-TileImage" content="icon_192.png">
+    <link rel="apple-touch-icon" href="icon_192.png">
+    <link rel="icon" href="icon_32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap">
     <style type="text/css">
         body{
             margin:3em;
         }
         pre {
-            font-family: monospace, monospace;
+            font-family: 'JetBrains Mono', monospace;
             margin:0 0 1em 0;
             min-width: 1ch;
         }
         h3 {
-            font-family: serif;
+            font-family: 'JetBrains Mono', monospace;
             font-weight: normal;
             font-size: inherit;
             margin: 0;
@@ -36,13 +39,13 @@
             display: inline;
         }
         .centered {
-            font-family: monospace, monospace;
+            font-family: 'JetBrains Mono', monospace;
             position: absolute;
             top: 49%;
             left: 50%;
         }
         .dida {
-            font-family: serif;
+            font-family: 'JetBrains Mono', monospace;
             color: rgb(190, 190, 190);
             margin:0 0 1em 8ch;
         }
@@ -55,14 +58,12 @@
             text-decoration: none;
         }
         .grid {
-            /*background-color: red;*/
             width: 600px;
             display: grid;
             grid-template-columns: 1fr 4fr
         }
         .hidden {
             display: none;
-            /*visibility: hidden;*/
         }
 
         @media only screen and (max-width: 600px) {
@@ -73,7 +74,6 @@
                 .grid {
                     max-width: 100%;
                     grid-template-columns: 1fr !important;
-                    /*margin-top: 3em;*/
                 }
                 pre {
                     margin:0 0 1em 0;
@@ -91,7 +91,7 @@
 
     <template>
         <div data-fn="normal">
-            <h3>24 Times</h3><br>
+            <h3>Минимальное онлайн присутствие — это не манифест, а состояние души.</h3><br>
                 A collection of twentyfour variations on the theme “clock” created for <a href="https://www.hek.ch">HeK</a> by <a href="https://gysin-vanetti.com">Gysin-Vanetti</a>.<br>
                 Each of these clocks shows time in a distinct form.
                 The result is a sequence of numbers, letters or punctuation marks
@@ -101,7 +101,6 @@
                 or we can be surprised by a little cuckoo that comes out of its house every thirty minutes.<br>
                 Each clock can be isoltated (and turned into a fullscreen web app) by clicking on its title.
             <br>
-            <a href="?pure">Hide descriptions</a>
         </div>
 
         <div data-fn="inverse">
@@ -227,7 +226,7 @@
 
     <script type="module">
 
-        import * as clocks from './clocks.js'
+        import * as clocks from './time.js'
 
         const target = document.querySelector('main')
         const template = document.querySelector('template').content
@@ -263,7 +262,6 @@
             'hiroshima',
         ]
 
-        // --- Solo, centered --------------------------------------------------
         if (sequence.indexOf(search) !== -1) {
             const pre = document.createElement('pre')
             target.classList.add('centered')
@@ -275,7 +273,7 @@
             target.style.transform = `translateX(${tx}ch) translateY(${ty}em)`
             document.title = desc.querySelector('h3').innerHTML
         }
-        // --- Grid, no text ---------------------------------------------------
+
         else if(search == 'pure') {
             sequence.forEach(name => {
                 if (typeof clocks[name] == 'function') {
@@ -287,7 +285,7 @@
                 }
             })
         }
-        // --- Grid, text ------------------------------------------------------
+
         else {
             target.classList.add('grid')
             sequence.forEach(name => {
@@ -313,13 +311,10 @@
             })
         }
 
-        // --- Update loop -----------------------------------------------------
         let frame = 0
         function loop(){
             requestAnimationFrame(loop)
             const t = new Date()
-            // Debug:
-            // const t = new Date(2000, 0, 0, 10, 10, 10)
             runner.forEach(fn => fn(t, frame))
             frame++
         }
