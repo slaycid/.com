@@ -94,7 +94,7 @@
 
     <template>
         <div data-fn="normal">
-            <h3>24 Times</h3><br>
+            <h3>Минимальное Онлайн Присутствие — это не манифест.</h3><br>
                 A collection of twentyfour variations on the theme “clock” created for <a href="https://www.hek.ch">HeK</a> by <a href="https://gysin-vanetti.com">Gysin-Vanetti</a>.<br>
                 Each of these clocks shows time in a distinct form.
                 The result is a sequence of numbers, letters or punctuation marks
@@ -103,8 +103,6 @@
                 but we can find time represented as the number that is the sum of all the digits of the moment
                 or we can be surprised by a little cuckoo that comes out of its house every thirty minutes.<br>
                 Each clock can be isoltated (and turned into a fullscreen web app) by clicking on its title.
-            <br>
-            <a href="?pure">Hide descriptions</a>
         </div>
 
         <div data-fn="inverse">
@@ -122,7 +120,7 @@
             time of the day measured in seconds
         </div>
 
-        <div data-fn="even">
+        <div data-fn="emoji">
             <h3>Even</h3>,
             displays only even numbers
         </div>
@@ -266,7 +264,6 @@
             'hiroshima',
         ]
 
-        // --- Solo, centered --------------------------------------------------
         if (sequence.indexOf(search) !== -1) {
             const pre = document.createElement('pre')
             target.classList.add('centered')
@@ -278,7 +275,7 @@
             target.style.transform = `translateX(${tx}ch) translateY(${ty}em)`
             document.title = desc.querySelector('h3').innerHTML
         }
-        // --- Grid, no text ---------------------------------------------------
+
         else if(search == 'pure') {
             sequence.forEach(name => {
                 if (typeof clocks[name] == 'function') {
@@ -290,7 +287,7 @@
                 }
             })
         }
-        // --- Grid, text ------------------------------------------------------
+
         else {
             target.classList.add('grid')
             sequence.forEach(name => {
@@ -316,13 +313,10 @@
             })
         }
 
-        // --- Update loop -----------------------------------------------------
         let frame = 0
         function loop(){
             requestAnimationFrame(loop)
             const t = new Date()
-            // Debug:
-            // const t = new Date(2000, 0, 0, 10, 10, 10)
             runner.forEach(fn => fn(t, frame))
             frame++
         }
