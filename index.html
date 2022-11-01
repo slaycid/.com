@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>24 Times</title>
+    <meta name="description" content="A collection of twentyfour variations on the theme “clock” created for HeK by Gysin-Vanetti.">
+    <meta name="author" content="Gysin-Vanetti, 2020">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="theme-color" content="white">
+    <meta name="msapplication-navbutton-color" content="white">
+    <meta name="msapplication-config" content="none">
+    <meta name="msapplication-TileColor" content="white">
+    <meta name="msapplication-square70x70logo" content="ico/icon_192.png">
+    <meta name="msapplication-square150x150logo" content="ico/icon_192.png">
+    <meta name="msapplication-TileImage" content="ico/icon_192.png">
+    <link rel="apple-touch-icon" href="ico/icon_192.png">
+    <link rel="icon" href="ico/icon_32.png">
+    <style type="text/css">
+        body{
+            margin:3em;
+        }
+        pre {
+            font-family: monospace, monospace;
+            margin:0 0 1em 0;
+            min-width: 1ch;
+        }
+        h3 {
+            font-family: serif;
+            font-weight: normal;
+            font-size: inherit;
+            margin: 0;
+            padding: 0;
+            display: inline;
+        }
+        .centered {
+            font-family: monospace, monospace;
+            position: absolute;
+            top: 49%;
+            left: 50%;
+        }
+        .dida {
+            font-family: serif;
+            color: rgb(190, 190, 190);
+            margin:0 0 1em 8ch;
+        }
+        .dida a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .dida a:hover {
+            color: rgb(160, 160, 160);
+            text-decoration: none;
+        }
+        .grid {
+            /*background-color: red;*/
+            width: 600px;
+            display: grid;
+            grid-template-columns: 1fr 4fr
+        }
+        .hidden {
+            display: none;
+            /*visibility: hidden;*/
+        }
+
+        @media only screen and (max-width: 600px) {
+                body {
+                    margin:1em;
+                    font-size: 1.4em;
+                }
+                .grid {
+                    max-width: 100%;
+                    grid-template-columns: 1fr !important;
+                    /*margin-top: 3em;*/
+                }
+                pre {
+                    margin:0 0 1em 0;
+                }
+                .remove {
+                    display: none;
+                }
+                .dida {
+                    margin:-1em 0 1em 0;
+                }
+    </style>
+</head>
+<body>
+    <main></main>
+
+    <template>
+        <div data-fn="normal">
+            <h3>24 Times</h3><br>
+                A collection of twentyfour variations on the theme “clock” created for <a href="https://www.hek.ch">HeK</a> by <a href="https://gysin-vanetti.com">Gysin-Vanetti</a>.<br>
+                Each of these clocks shows time in a distinct form.
+                The result is a sequence of numbers, letters or punctuation marks
+                animated in different ways.<br>
+                A few of the more common ones are not part of this collection, for example word-, binary-, hex– or emoji-clock;
+                but we can find time represented as the number that is the sum of all the digits of the moment
+                or we can be surprised by a little cuckoo that comes out of its house every thirty minutes.<br>
+                Each clock can be isoltated (and turned into a fullscreen web app) by clicking on its title.
+            <br>
+            <a href="?pure">Hide descriptions</a>
+        </div>
+
+        <div data-fn="inverse">
+            <h3>Inverted</h3>,
+            time until midnight
+        </div>
+
+        <div data-fn="percent" data-tx="-3">
+            <h3>Ratio</h3>,
+            percent of the day
+        </div>
+
+        <div data-fn="seconds" data-tx="-2">
+            <h3>Seconds</h3>,
+            time of the day measured in seconds
+        </div>
+
+        <div data-fn="even">
+            <h3>Even</h3>,
+            displays only even numbers
+        </div>
+
+        <div data-fn="odd">
+            <h3>Odd</h3>,
+            displays only odd numbers
+        </div>
+
+        <div data-fn="roman" data-tx="-6">
+            <h3>Roman</h3>,
+            romans didn’t have the zero
+        </div>
+
+        <div data-fn="degrees" data-tx="-5.5">
+            <h3>Degrees</h3>,
+            degrees of each hand
+        </div>
+
+        <div data-fn="clock" data-tx="-3">
+            <h3>Alarm clock</h3>,
+            click to set
+        </div>
+
+        <div data-fn="cuckoo">
+            <h3>Cuckoo clock</h3>, click to knock
+        </div>
+
+        <div data-fn="sum1" data-tx="-1">
+            <h3>Sum 1</h3>,
+            hours + minutes + seconds
+        </div>
+
+        <div data-fn="sum2" data-tx="-1">
+            <h3>Sum 2</h3>,
+            sum of all the digits
+        </div>
+
+        <div data-fn="sort">
+            <h3>Sort</h3>,
+            the numbers are sorted ascendingly
+        </div>
+
+        <div data-fn="natural" data-tx="-1.5">
+            <h3>Natural</h3>,
+            approximated time to quarters
+        </div>
+
+        <div data-fn="random">
+            <h3>Random</h3>
+        </div>
+
+        <div data-fn="line" data-tx="-30">
+            <br class="remove">
+            <h3>Line</h3>,<br>
+            hour is an empty dot, <br>
+            minute a comma, <br>
+            second a middle dot.<br>
+            Certain characters allow a visual superposition:<br>
+            <code>
+            . + · = :<br>
+            : + , = ;<br>
+            </code>
+        </div>
+
+        <div data-fn="mechanical" data-ty="-11">
+            <span class="remove"><br><br><br><br><br><br><br><br><br></span>
+            <h3>Mechanical</h3>,
+            virtual complexity<br>
+        </div>
+
+        <div data-fn="prime">
+            <h3>Prime</h3>,
+            displays only prime numbers
+        </div>
+
+        <div data-fn="special">
+            <h3>Special</h3>,
+            displays only special numbers
+        </div>
+
+        <div data-fn="morse" data-tx="-17.5">
+            <br class="remove">
+            <h3>Morse</h3>
+        </div>
+
+        <div data-fn="lucky">
+            <h3>Lucky</h3>,
+            doesn’t display the unlucky numbers 4, 9, 13, 17 and 39
+        </div>
+
+        <div data-fn="ampm" data-tx="-1">
+            <h3>Ante meridiem or post meridiem</h3>
+        </div>
+
+        <div data-fn="inequality">
+            <h3>Inequality</h3>
+        </div>
+
+        <div data-fn="hiroshima">
+            <h3>Broken</h3>
+        </div>
+
+    </template>
+
+    <script type="module">
+
+        import * as clocks from './clocks.js'
+
+        const target = document.querySelector('main')
+        const template = document.querySelector('template').content
+        const url = new URL(location)
+        const search = url.search.substring(1)
+        const hasTouch = 'ontouchstart' in window
+        const runner = []
+
+        const sequence = [
+            'normal',
+            'inverse',
+            'percent',
+            'seconds',
+            'even',
+            'odd',
+            'roman',
+            'degrees',
+            'clock',
+            'cuckoo',
+            'sum1',
+            'sum2',
+            'sort',
+            'natural',
+            'random',
+            'line',
+            'mechanical',
+            'prime',
+            'special',
+            'morse',
+            'lucky',
+            'ampm',
+            'inequality',
+            'hiroshima',
+        ]
+
+        // --- Solo, centered --------------------------------------------------
+        if (sequence.indexOf(search) !== -1) {
+            const pre = document.createElement('pre')
+            target.classList.add('centered')
+            target.appendChild(pre)
+            runner.push(clocks[search](pre))
+            const desc = template.querySelector(`[data-fn=${search}]`)
+            const tx = desc.dataset.tx || -4
+            const ty = desc.dataset.ty || -1
+            target.style.transform = `translateX(${tx}ch) translateY(${ty}em)`
+            document.title = desc.querySelector('h3').innerHTML
+        }
+        // --- Grid, no text ---------------------------------------------------
+        else if(search == 'pure') {
+            sequence.forEach(name => {
+                if (typeof clocks[name] == 'function') {
+                    const pre = document.createElement('pre')
+                    target.appendChild(pre)
+                    runner.push(clocks[name](pre))
+                } else {
+                    console.warn(`Function ${name} is undefined`)
+                }
+            })
+        }
+        // --- Grid, text ------------------------------------------------------
+        else {
+            target.classList.add('grid')
+            sequence.forEach(name => {
+                if (typeof clocks[name] == 'function') {
+                    const pre = document.createElement('pre')
+                    const desc = template.querySelector(`[data-fn=${name}]`)
+                    if (hasTouch) {
+                        let h = desc.innerHTML
+                        h = h.replace('clicking', 'tapping')
+                        h = h.replace('click', 'tap')
+                        desc.innerHTML = h
+                    }
+                    desc.classList.add('dida')
+                    const h3 = desc.querySelector('h3')
+                    const title = h3.innerHTML
+                    h3.innerHTML = `<a href='?${name}'>${title}</a>`
+                    target.appendChild(pre)
+                    target.appendChild(desc)
+                    runner.push(clocks[name](pre))
+                } else {
+                    console.warn(`Function ${name} is undefined`)
+                }
+            })
+        }
+
+        // --- Update loop -----------------------------------------------------
+        let frame = 0
+        function loop(){
+            requestAnimationFrame(loop)
+            const t = new Date()
+            // Debug:
+            // const t = new Date(2000, 0, 0, 10, 10, 10)
+            runner.forEach(fn => fn(t, frame))
+            frame++
+        }
+
+        requestAnimationFrame(loop)
+
+    </script>
+
+</body>
+</html>
