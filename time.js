@@ -484,6 +484,6 @@ export function leet(target) {
 
 export function hiroshima(target) {
 	return t => {
-		target.innerHTML = '??:??'
+		target.innerHTML = '??:??:??'
 	}
 }
