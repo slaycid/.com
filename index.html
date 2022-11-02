@@ -95,66 +95,64 @@
         <div data-fn="normal">
             <h3></h3>
             Минимальное онлайн присутствие — это не манифест, а состояние души.<br>
-            Первый компьютер появился у меня в 6 лет, но первый раз зашел в сеть я только в 11. Это было незабываемо.<br>
-            Each of these clocks shows time in a distinct form.
-            The result is a sequence of numbers, letters or punctuation marks
-            animated in different ways.<br>
-            A few of the more common ones are not part of this collection, for example word-, binary-, hex– or emoji-clock;
-            but we can find time represented as the number that is the sum of all the digits of the moment
-            or we can be surprised by a little cuckoo that comes out of its house every thirty minutes.<br>
-            Each clock can be isoltated (and turned into a fullscreen web app) by clicking on its title.
-            <br>
+            Скоро на этом сайте можно будет купить классные вещи, с которыми приятно проводить время и без интернета.
+            А пока давайте просто поразмышляем на тему времени.<br>
+            Первый компьютер появился у меня в 6 лет, но первый раз зашел в сеть я только в 11.<br>
+            Это было незабываемо.<br>
+            На меня упали тонны фильмов, музыки и порнографии.
+            В результате я стал терять слишком много времени.<br>
+            И я бы не хотел, чтобы вы повторяли мои ошибки.<br>
         </div>
 
         <div data-fn="inverse">
             <h3></h3>
-            Столько вам осталось проебать сегодня
+            Вот столько вы еще можете потратить сегодня впустую
         </div>
 
         <div data-fn="percent" data-tx="-3">
             <h3></h3>
-            А проебали вы уже столько
+            А благополучно потратили уже столько
         </div>
 
         <div data-fn="seconds" data-tx="-2">
             <h3></h3>
-            В секундах эта цифра куда страшнее
+            Кстати, в секундах эта цифра куда страшнее, чем в процентах
         </div>
-
-        <div data-fn="emoji">
-            <h3></h3>
-            Парадокс в том, что многие из тех, кто пользуются такими эмодзи, не умеют определять время по стрелочным часам
-        </div>
-
-        <div data-fn="roman" data-tx="-6">
-            <h3></h3>
-            Ровно, как и не знают римские цифры
-        </div>
-
+        
         <div data-fn="clock" data-tx="-3">
             <h3></h3>
-            Поставьте будильник
+            Можете поставить будильник
         </div>
 
         <div data-fn="cuckoo">
             <h3></h3>
-            Пусть кукушка вас разбудит
+            Или пусть каждый час вас будит кукушка
+        </div>
+
+        <div data-fn="emoji">
+            <h3></h3>
+            Парадокс в том, что многие из тех, кто ставят такие эмодзи, не умеют определять время по стрелочным часам
         </div>
 
         <div data-fn="inequality">
             <h3></h3>
-            Кстати, между часами, минутами и секундами есть неравенство (прямо, как в обществе)
+            Между часами, минутами и секундами есть неравенство, как в обществе
+        </div>
+        
+        <div data-fn="roman" data-tx="-6">
+            <h3></h3>
+            Берите пример с римских цифр — там нет нулей
         </div>
 
         <div data-fn="random">
             <h3></h3>
-            А вообще похуй на время
+            А вообще наплевать на это время
         </div>
 
         <div data-fn="hiroshima">
             <h3></h3>
             Ведь время
-            <a class="Text" id="time">есть</a>
+            <a class="Text" id="time">всегда есть</a>
         </div>
 
     </template>
@@ -175,11 +173,11 @@
             'inverse',
             'percent',
             'seconds',
-            'emoji',
-            'roman',
             'clock',
             'cuckoo',
+            'emoji',
             'inequality',
+            'roman',
             'random',
             'hiroshima',
         ]
@@ -247,7 +245,7 @@
     
     <script>
         
-        var time = ["— это конструкт", "ничего не значит", "истекло", "терпит"]; 
+        var time = ["— это конструкт", "ничего не значит", "истекло", "терпит", "прошло"]; 
         var t = setInterval(function() { 
         var randomNumber = Math.round(Math.random()*(time.length-1)); 
             $('#time').html(time[randomNumber]); 
