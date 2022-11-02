@@ -154,7 +154,7 @@
         <div data-fn="hiroshima">
             <h3></h3>
             Ведь время
-            <a class="Text" id="time">терпит</a>
+            <a class="Text" id="time">есть</a>
         </div>
 
     </template>
@@ -247,11 +247,11 @@
     
     <script>
         
-        var time = ["— это конструкт", "ничего не значит", "— это ты", "— это ничто"]; 
+        var time = ["— это конструкт", "ничего не значит", "истекло", "терпит"]; 
         var t = setInterval(function() { 
         var randomNumber = Math.round(Math.random()*(time.length-1)); 
             $('#time').html(time[randomNumber]); 
-        }, 1000); 
+        }, 2000); 
             document.getElementById("time").innerHTML;
     
     </script>
