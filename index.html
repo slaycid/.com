@@ -152,7 +152,7 @@
 
         <div data-fn="hiroshima">
             <h3></h3>
-            Ведь время — <p class="Text" id="fruit">Grape</p>
+            Ведь время — <p class="Text" id="time">ничего</p>
         </div>
 
     </template>
@@ -244,12 +244,12 @@
     </script>
     
     <script>
-    var fruit = ["Apple", "Banana", "Cerry", "Dragonfruit","Eldberry", "Guava", "Jackfruit", "Longan", "Mango", "Orange", "Pineapple", "Watermelon"]; 
-    var t = setInterval(function() { 
-    var randomNumber = Math.round(Math.random()*(fruit.length-1)); 
-    $('#fruit').html(fruit[randomNumber]); 
-    }, 1500); 
-    document.getElementById("fruit").innerHTML;
+        var time = ["Конструкт", "Тьма", "Все", "Dragonfruit","Eldberry", "Guava", "Jackfruit", "Longan", "Mango", "Orange", "Pineapple", "Watermelon"]; 
+        var t = setInterval(function() { 
+        var randomNumber = Math.round(Math.random()*(time.length-1)); 
+            $('#time').html(time[randomNumber]); 
+        }, 1500); 
+            document.getElementById("time").innerHTML;
     
     </script>
 
