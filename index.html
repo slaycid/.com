@@ -152,7 +152,8 @@
 
         <div data-fn="hiroshima">
             <h3></h3>
-            Ведь время — <p class="Text" id="time">ничего</p>
+            Ведь время:
+            <p class="Text" id="time">Ничего</p>
         </div>
 
     </template>
@@ -244,7 +245,7 @@
     </script>
     
     <script>
-        var time = ["Конструкт", "Тьма", "Все", "Dragonfruit","Eldberry", "Guava", "Jackfruit", "Longan", "Mango", "Orange", "Pineapple", "Watermelon"]; 
+        var time = ["Конструкт", "Тьма", "Все"]; 
         var t = setInterval(function() { 
         var randomNumber = Math.round(Math.random()*(time.length-1)); 
             $('#time').html(time[randomNumber]); 
