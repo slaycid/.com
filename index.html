@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style type="text/css">
         body{
             margin:3em;
@@ -151,7 +152,7 @@
 
         <div data-fn="hiroshima">
             <h3></h3>
-            Ведь время — это всего лишь
+            Ведь время — <p class="Text" id="fruit">Grape</p>
         </div>
 
     </template>
@@ -240,6 +241,16 @@
 
         requestAnimationFrame(loop)
 
+    </script>
+    
+    <script>
+    var fruit = ["Apple", "Banana", "Cerry", "Dragonfruit","Eldberry", "Guava", "Jackfruit", "Longan", "Mango", "Orange", "Pineapple", "Watermelon"]; 
+    var t = setInterval(function() { 
+    var randomNumber = Math.round(Math.random()*(fruit.length-1)); 
+    $('#fruit').html(fruit[randomNumber]); 
+    }, 1500); 
+    document.getElementById("fruit").innerHTML;
+    
     </script>
 
 </body>
